@@ -2,6 +2,7 @@
 require_once("qiniu/io.php");
 require_once("qiniu/rs.php");
 require_once("curl.class.php");
+
 class Qiniu
 {
     private $_akey = '<yourAKEY>';
@@ -22,8 +23,8 @@ class Qiniu
         Qiniu_SetKeys($this->_akey, $this->_skey);
         //self::$_client = new Qiniu
     }
-    public function download($key, $domain) 
-    {
+
+    public function download($key, $domain) {
         $domain = ($domain == '') ? $this->_domain : $domain;
         if(self::$_curl == null)
             self::$_curl = new CurlWrapper();
@@ -34,8 +35,8 @@ class Qiniu
        // echo "<img  src=\"{$privateUrl}\" width=\"480\" height=\"480\">click</img>";
         return $privateUrl;
     }
-    public function upload($key, $bucket)
-    {
+
+    public function upload($key, $bucket){
         $bucket = ($bucket == '') ? $this->_bucket : $bucket;
         if(self::$_putPolicy == null)
             self::$_putPolicy = new Qiniu_RS_PutPolicy($bucket);
