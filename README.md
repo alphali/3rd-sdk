@@ -1,3 +1,6 @@
-#APIs of qiniu cloud service
-It is an excellent cloud-service team, build company with golang
+##3rd-sdk
+## qiniu cloud
+download
+upload
+
 
